@@ -24,6 +24,11 @@ public class Hello {
         return "ok";
     }
 
+    @RequestMapping("/student/{id}/{name}")
+    String getStudent(@PathVariable String id){
+        return id;
+    }
+
     @RequestMapping("/get")
     String get(){
         Jedis jedis=new Jedis("redis.yummy.svc");
