@@ -25,6 +25,7 @@ public class Text {
         ResponseBodyEmitter emitter=new ResponseBodyEmitter();
         new Thread(()->{
             while (true){
+                System.out.print("fds");
                 try {
                     emitter.send("hello");
                     try {
