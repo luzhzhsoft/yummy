@@ -17,6 +17,7 @@ public class Probe {
 
     @RequestMapping("/liveness")
     String getLivenessProbe() {
+        System.out.print("fdsa"fd);
         return "ok";
     }
 
