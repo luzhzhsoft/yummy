@@ -17,7 +17,7 @@ public class Probe {
 
     @RequestMapping("/liveness")
     String getLivenessProbe() {
-        System.out.print("f452s4a");
+        System.out.print("fer2s4a");
         return "ok";
     }
 
