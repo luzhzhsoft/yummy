@@ -1,5 +1,7 @@
 package com.luzhzh.yummy.api;
 
+import com.bw.dc.spring.client.IPushClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,10 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Probe {
 
+    /*@Autowired
+    IPushClient client;*/
+
     @RequestMapping("/liveness")
     String getLivenessProbe() {
         return "ok";
     }
+
 
 
 }

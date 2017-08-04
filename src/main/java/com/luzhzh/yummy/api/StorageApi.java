@@ -1,13 +1,17 @@
 package com.luzhzh.yummy.api;
 
+import com.bw.dc.spring.client.IPushClient;
+import com.bw.dc.spring.client.PushClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.HandlerMapping;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -23,30 +27,34 @@ public class StorageApi {
     @Autowired
     Environment env;
 
+/*    @Autowired
+   public static IPushClient client = null;
 
+
+    @Bean
+    public static IPushClient getIPushClient() {
+        if (client == null) {
+            client = new PushClient();
+
+        }
+        return client;
+    }*/
 
     @RequestMapping("/base")
-    String getBase(){
+    String getBase() {
         return env.getProperty("storage.dir");
     }
 
 
-
-
-
     @RequestMapping(value = "/**", method = RequestMethod.GET)
-    public void getValue(HttpServletRequest request, HttpServletResponse response)  {
+    public void getValue(HttpServletRequest request, HttpServletResponse response) {
         String path = extractPathFromPattern(request);
-        path=getBase()+path;
+        path = getBase() + path;
 
-        File file=new File(path);
-
-
+        File file = new File(path);
 
 
     }
-
-
 
 
     private String extractPathFromPattern(final HttpServletRequest request) {
