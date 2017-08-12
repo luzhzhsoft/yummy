@@ -31,25 +31,6 @@
             <version>2.9.0</version>
         </dependency>
 
-
-
-        <dependency>
-            <groupId>com.bw.dcsdk</groupId>
-            <artifactId>dcsdk</artifactId>
-            <version>2.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.bw.dcsdk</groupId>
-            <artifactId>dcsdk-client</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.bw.dcsdk</groupId>
-            <artifactId>ae-portal-points</artifactId>
-            <version>1.0.7</version>
-        </dependency>
     </dependencies>
 
     <!-- Package as an executable jar -->
