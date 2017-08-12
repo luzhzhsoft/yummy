@@ -18,28 +18,5 @@ import java.io.PrintWriter;
 @RestController
 public class Text {
 
-    @RequestMapping("/test")
-    public ResponseBodyEmitter hanle(){
-        ActivationeventAsV2 activationeventAsV2=new ActivationeventAsV2();
-        CreatenewmoduleAsV4 createnewmoduleAsV4=new CreatenewmoduleAsV4();
-        ResponseBodyEmitter emitter=new ResponseBodyEmitter();
-        new Thread(()->{
-            while (true){
-                System.out.print("fds");
-                try {
-                    emitter.send("hello");
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    //emitter.complete();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-        return emitter;
-    }
 
 }
